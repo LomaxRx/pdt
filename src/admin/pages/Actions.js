@@ -25,12 +25,12 @@ class Actions extends React.Component {
   save = () => {
     this.props.saveAction(this.props.action);
     this.props.resetAction();
-    this.props.changePage('/');
+    this.props.changePage('/admin/');
   }
 
   cancel = () => {
     this.props.resetAction();
-    this.props.changePage('/');
+    this.props.changePage('/admin/');
   }
 
   render(){
@@ -42,14 +42,14 @@ class Actions extends React.Component {
           <a className="button" onClick={this.save}>save</a>
         ]}>
           <MenuList items={[
-            { label: 'Setup', linkTo: `/actions/${id}/` },
-            { label: 'Attributes', linkTo: `/actions/${id}/attributes/` },
-            { label: 'Relationships', linkTo: `/actions/${id}/relationships/` },
+            { label: 'Setup', linkTo: `/admin/actions/${id}/` },
+            { label: 'Attributes', linkTo: `/admin/actions/${id}/attributes/` },
+            { label: 'Relationships', linkTo: `/admin/actions/${id}/relationships/` },
           ]} />
         </Subheader>
-        <Route path="/actions/:id/" exact component={ActionsSetup} />
-        <Route path="/actions/:id/attributes/" component={ActionsAttributes} />
-        <Route path="/actions/:id/relationships/" component={ActionsRelationships} />
+        <Route path="/admin/actions/:id/" exact component={ActionsSetup} />
+        <Route path="/admin/actions/:id/attributes/" component={ActionsAttributes} />
+        <Route path="/admin/actions/:id/relationships/" component={ActionsRelationships} />
       </div>
     );
   }
@@ -65,8 +65,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 
 const mapStateToProps = state => ({
-  actions: state.actions,
-  action: state.activeAction
+  actions: state.admin.actions,
+  action: state.admin.activeAction
 });
 
 export default Actions = connect(mapStateToProps, mapDispatchToProps)(Actions)

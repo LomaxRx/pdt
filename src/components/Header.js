@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 export default class Header extends React.Component {
 
@@ -9,7 +10,9 @@ export default class Header extends React.Component {
         <div className="header-wrapper container">
           <div className="row gutter-10">
             <div className="header__logo col-9">
-              <div className="header__logo__img">Predicate.</div>
+              <div className="header__logo__img">
+                <Link to='/'>Predicate.</Link>
+              </div>
             </div>
             <div className="header__account col-3">
 

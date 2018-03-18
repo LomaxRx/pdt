@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 
 
-class ThingsRelationships extends React.Component {
+class ActionsRelationships extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -42,13 +42,15 @@ class ThingsRelationships extends React.Component {
   }
 
   render(){
-    let { thing, relationships, people, actions, things } = this.props;
+    let { action, relationships, people, actions, things, rel } = this.props;
+    console.log(rel);
+    console.log(action);
     return (
       <main className="container">
         <div className="row gutter-10">
           <div className="app__left col-2">
             <div className="type-edit">
-              <Text value={thing.type} onChange={this.changeType}/>
+              <Text value={action.type} onChange={this.changeType}/>
             </div>
           </div>
           <div className="app__spacer col-1"><div /></div>
@@ -61,8 +63,8 @@ class ThingsRelationships extends React.Component {
                 <div className="relationships__list">
                   <RelationshipTagGroup key={`relationship-${i}`}>
                     <RelationshipTag type="person" label={people[r.personId].type} />
-                    <RelationshipTag type="action" label={actions[r.actionId].type} />
-                    <RelationshipTag type="thing" label={thing.type} />
+                    <RelationshipTag type="action" label={action.type} />
+                    <RelationshipTag type="thing" label={things[r.thingId].type} />
                   </RelationshipTagGroup>
                   <Button className='button-square-15'
                     color="red"
@@ -76,7 +78,7 @@ class ThingsRelationships extends React.Component {
             </div>
             <div className="relationship-input-wrapper">
               {this.state.relationshipInput &&
-                <RelationshipInput type='thing' thingId={thing.id} save={this.save} close={this.hideRelationshipInput}/>
+                <RelationshipInput type='action' actionId={action.id} save={this.save} close={this.hideRelationshipInput}/>
               }
             </div>
           </div>
@@ -87,19 +89,20 @@ class ThingsRelationships extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  thing: state.activeThing,
-  relationships: state.relationships.things[state.activeThing.id] || [],
-  people: state.people.types,
-  actions: state.actions.types,
-  things: state.things.types
+  action: state.admin.activeAction,
+  relationships: state.admin.relationships.actions[state.admin.activeAction.id] || [],
+  rel: state.admin.relationships,
+  people: state.admin.people.types,
+  actions: state.admin.actions.types ,
+  things: state.admin.things.types
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   addRelationship: (personId, actionId, thingId) => addRelationship(personId, actionId, thingId),
   removeRelationship: (personId, actionId, thingId) => removeRelationship(personId, actionId, thingId),
-  changeType: type => changeType('thing', type)
+  changeType: type => changeType('action', type)
 }, dispatch);
 
-ThingsRelationships = connect(mapStateToProps, mapDispatchToProps)(ThingsRelationships);
+ActionsRelationships = connect(mapStateToProps, mapDispatchToProps)(ActionsRelationships);
 
-export default ThingsRelationships;
+export default ActionsRelationships;

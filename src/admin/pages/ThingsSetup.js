@@ -15,7 +15,7 @@ class ThingsSetup extends React.Component {
 
   render(){
     let { thing } = this.props;
-    
+
     return (
       <main className="container">
         <div className="row gutter-10">
@@ -32,7 +32,7 @@ class ThingsSetup extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  thing: state.activeThing
+  thing: state.admin.activeThing
 });
 
 const mapDispatchToProps = (dispatch) => ({

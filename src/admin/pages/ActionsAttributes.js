@@ -7,7 +7,7 @@ import { Text } from '../components/Inputs';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-class ThingsAttributes extends React.Component {
+class ActionsAttributes extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -29,13 +29,14 @@ class ThingsAttributes extends React.Component {
 
 
   render(){
-    let { thing, addAttribute } = this.props;
+    let { action, addAttribute } = this.props;
+    console.log(action);
     return (
       <main className="container">
         <div className="row gutter-10">
           <div className="app__left col-2">
             <div className="type-edit">
-              <Text value={thing.type} onChange={this.changeType}/>
+              <Text value={action.type} onChange={this.changeType}/>
             </div>
           </div>
           <div className="app__spacer col-1"><div /></div>
@@ -44,8 +45,8 @@ class ThingsAttributes extends React.Component {
               <h2>Attributes</h2>
             </div>
             <div className="attributes">
-              {thing.attributes.map((a,i)=>(
-                <Attribute {...a} term="thing"/>
+              {action.attributes.map((a,i)=>(
+                <Attribute {...a} term="action"/>
               ))}
             </div>
             <div className="add-attribute-button">
@@ -64,14 +65,14 @@ class ThingsAttributes extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  thing: state.activeThing
+  action: state.admin.activeAction
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addAttribute: attribute => addAttribute('thing', attribute),
-  changeType: type => changeType('thing', type)
+  addAttribute: attribute => addAttribute('action', attribute),
+  changeType: type => changeType('action', type)
 }, dispatch);
 
-ThingsAttributes = connect(mapStateToProps, mapDispatchToProps)(ThingsAttributes);
+ActionsAttributes = connect(mapStateToProps, mapDispatchToProps)(ActionsAttributes);
 
-export default ThingsAttributes;
+export default ActionsAttributes;

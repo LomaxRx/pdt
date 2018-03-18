@@ -7,7 +7,7 @@ import { Text } from '../components/Inputs';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-class ActionsAttributes extends React.Component {
+class PeopleAttributes extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -29,24 +29,23 @@ class ActionsAttributes extends React.Component {
 
 
   render(){
-    let { action, addAttribute } = this.props;
-    console.log(action);
+    let { person, addAttribute } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">
           <div className="app__left col-2">
             <div className="type-edit">
-              <Text value={action.type} onChange={this.changeType}/>
+              <Text value={person.type} onChange={this.changeType}/>
             </div>
           </div>
           <div className="app__spacer col-1"><div /></div>
-          <div className="app__right attributes-wrapper col-6">
+          <div className="app__right person-attributes col-6">
             <div className="section-heading">
               <h2>Attributes</h2>
             </div>
             <div className="attributes">
-              {action.attributes.map((a,i)=>(
-                <Attribute {...a} term="action"/>
+              {person.attributes.map((a,i)=>(
+                <Attribute {...a} term="person"/>
               ))}
             </div>
             <div className="add-attribute-button">
@@ -65,14 +64,14 @@ class ActionsAttributes extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  action: state.activeAction
+  person: state.admin.activePerson
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addAttribute: attribute => addAttribute('action', attribute),
-  changeType: type => changeType('action', type)
+  addAttribute: attribute => addAttribute('person', attribute),
+  changeType: type => changeType('person', type)
 }, dispatch);
 
-ActionsAttributes = connect(mapStateToProps, mapDispatchToProps)(ActionsAttributes);
+PeopleAttributes = connect(mapStateToProps, mapDispatchToProps)(PeopleAttributes);
 
-export default ActionsAttributes;
+export default PeopleAttributes;

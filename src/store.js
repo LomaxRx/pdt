@@ -3,11 +3,11 @@ import { routerMiddleware } from 'react-router-redux'
 import storage from 'store';
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
-import reducer from './reducers';
+import adminReducer from './admin/reducers';
 
 export const history = createHistory()
 
-const initialState = storage.get('state') || {}
+const initialState = { admin: storage.get('state') || {} };
 const enhancers = []
 const middleware = [
   thunk,
@@ -28,7 +28,7 @@ const composedEnhancers = compose(
 )
 
 const store = createStore(
-  reducer,
+  combineReducers({ admin: adminReducer }),
   initialState,
   composedEnhancers
 )

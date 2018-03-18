@@ -7,7 +7,7 @@ import { Text } from '../components/Inputs';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-class PeopleAttributes extends React.Component {
+class ThingsAttributes extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -29,23 +29,23 @@ class PeopleAttributes extends React.Component {
 
 
   render(){
-    let { person, addAttribute } = this.props;
+    let { thing, addAttribute } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">
           <div className="app__left col-2">
             <div className="type-edit">
-              <Text value={person.type} onChange={this.changeType}/>
+              <Text value={thing.type} onChange={this.changeType}/>
             </div>
           </div>
           <div className="app__spacer col-1"><div /></div>
-          <div className="app__right person-attributes col-6">
+          <div className="app__right attributes-wrapper col-6">
             <div className="section-heading">
               <h2>Attributes</h2>
             </div>
             <div className="attributes">
-              {person.attributes.map((a,i)=>(
-                <Attribute {...a} term="person"/>
+              {thing.attributes.map((a,i)=>(
+                <Attribute {...a} term="thing"/>
               ))}
             </div>
             <div className="add-attribute-button">
@@ -64,14 +64,14 @@ class PeopleAttributes extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  person: state.activePerson
+  thing: state.admin.activeThing
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addAttribute: attribute => addAttribute('person', attribute),
-  changeType: type => changeType('person', type)
+  addAttribute: attribute => addAttribute('thing', attribute),
+  changeType: type => changeType('thing', type)
 }, dispatch);
 
-PeopleAttributes = connect(mapStateToProps, mapDispatchToProps)(PeopleAttributes);
+ThingsAttributes = connect(mapStateToProps, mapDispatchToProps)(ThingsAttributes);
 
-export default PeopleAttributes;
+export default ThingsAttributes;

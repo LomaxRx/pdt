@@ -41,7 +41,7 @@ class Home extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  state
+  state: state.admin
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
