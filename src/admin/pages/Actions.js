@@ -37,7 +37,7 @@ class Actions extends React.Component {
     let { match: { params: { id } }} = this.props;
     return (
       <div className="people">
-        <Subheader title='Action:' color='green' buttons={[
+        <Subheader title='Action:' color='green' admin={true} buttons={[
           <a className="button red" onClick={this.cancel}>cancel</a>,
           <a className="button" onClick={this.save}>save</a>
         ]}>
