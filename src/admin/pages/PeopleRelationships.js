@@ -46,13 +46,13 @@ class PeopleRelationships extends React.Component {
     return (
       <main className="container">
         <div className="row gutter-10">
-          <div className="app__left col-2">
+          <div className="admin__left col-2">
             <div className="type-edit">
               <Text value={person.type} onChange={this.changeType}/>
             </div>
           </div>
-          <div className="app__spacer col-1"><div /></div>
-          <div className="app__right col-9">
+          <div className="admin__spacer col-1"><div /></div>
+          <div className="admin__right col-9">
             <div className="section-heading">
               <h2>Relationships</h2>
             </div>

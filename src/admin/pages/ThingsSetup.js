@@ -19,9 +19,9 @@ class ThingsSetup extends React.Component {
     return (
       <main className="container">
         <div className="row gutter-10">
-          <div className="app__left col-2"></div>
-          <div className="app__spacer col-1"><div /></div>
-          <div className="app__right col-6">
+          <div className="admin__left col-2"></div>
+          <div className="admin__spacer col-1"><div /></div>
+          <div className="admin__right col-6">
               <Text value={thing.type} label="Type:" onChange={this.changeType} />
               <TextArea value={thing.description} label="Description:" onChange={this.changeDescription} />
           </div>

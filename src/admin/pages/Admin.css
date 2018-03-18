@@ -1,3 +1,33 @@
+.admin__left, .admin__spacer, .admin__right {
+  min-height: 100vh;
+}
+
+.admin__left, .admin__right{
+  padding-bottom: 180px;
+}
+
+.admin__right {
+  padding-top: 90px;
+}
+
+.admin__left{
+  padding-top: 15px;
+}
+
+.admin__right > section {
+  min-height: 200px;
+}
+
+.admin__right .section-heading {
+  position: relative;
+}
+
+.admin__spacer > div {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #EBEDED;
+}
+
 .terms {
   padding-bottom: 50px;
   margin-bottom: 50px;

@@ -33,13 +33,13 @@ class PeopleAttributes extends React.Component {
     return (
       <main className="container">
         <div className="row gutter-10">
-          <div className="app__left col-2">
+          <div className="admin__left col-2">
             <div className="type-edit">
               <Text value={person.type} onChange={this.changeType}/>
             </div>
           </div>
-          <div className="app__spacer col-1"><div /></div>
-          <div className="app__right person-attributes col-6">
+          <div className="admin__spacer col-1"><div /></div>
+          <div className="admin__right person-attributes col-6">
             <div className="section-heading">
               <h2>Attributes</h2>
             </div>

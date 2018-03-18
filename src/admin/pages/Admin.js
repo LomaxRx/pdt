@@ -18,9 +18,9 @@ let Admin = ({people, actions, things}) => (
     </Subheader>
     <main className="container">
       <div className="row gutter-10">
-        <div className="app__left col-2"></div>
-        <div className="app__spacer col-1"><div /></div>
-        <div className="app__right col-6">
+        <div className="admin__left col-2"></div>
+        <div className="admin__spacer col-1"><div /></div>
+        <div className="admin__right col-6">
           <section>
             <Heading1 label="People" color="blue">
               <Button color="blue" className="button-square-15 add-term" label="+" linkTo="/admin/people/new/" />
