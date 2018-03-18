@@ -1,0 +1,56 @@
+.terms {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(35,35,35,0.1);
+}
+
+.add-term{
+  position: absolute;
+  left: calc(-16.666666% + 15px);
+  top: 5px;
+}
+
+.type-edit .input-group input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.person-attributes{
+  padding-bottom: 100px;
+}
+
+.attributes, .relationships{
+  margin-bottom: 50px;
+}
+
+
+.relationships__list > * {
+  display: inline-block;
+}
+
+.relationships__list{
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  box-shadow: inset 0px -1px 0px 0px rgba(35,35,35,0.1);
+}
+
+.relationships__list:hover{
+  background: rgba(35,35,35,0.05);
+}
+
+.relationships__list:first-child {
+  box-shadow: inset 0px 1px 0px 0px rgba(35,35,35,0.1), inset 0px -1px 0px 0px rgba(35,35,35,0.1);
+}
+
+.relationships__list .button{
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  line-height: 13px;
+}

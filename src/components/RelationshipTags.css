@@ -1,0 +1,132 @@
+
+.relationship-tag-group > .relationship-tag.action:not(.empty) {
+  margin-left: -14px;
+}
+
+.relationship-tag-group > .relationship-tag.thing:not(.empty) {
+  margin-left: -14px;
+}
+
+.relationship-tag {
+  height: 30px;
+  display: inline-block;
+  margin-left: 0px;
+  transition: margin-left 0.1s ease;
+}
+
+.relationship-tag > div {
+  line-height: 30px;
+  font-size: 12px;
+  color: #FEFEFE;
+  text-transform: uppercase;
+  height: 28px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 100%;
+}
+
+.relationship-tag.person{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background: #3D5C92;
+  padding-right: 2px;
+  clip-path: polygon(-3px -1px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) calc(100% + 3px), 0 calc(100% + 3px));
+}
+
+.relationship-tag.person > div {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-left: 25px;
+  padding-right: 40px;
+  background: #5181DC;
+  clip-path: polygon(-3px -1px, calc(100% - 15px) 0, calc(100% - 1px) 50%, calc(100% - 15px) calc(100% + 3px), 0 calc(100% + 3px));
+}
+
+.relationship-tag.person.empty{
+  background: #5181DC;
+}
+
+.relationship-tag.person.empty > div {
+  color: #5181DC;
+  background: #FEFEFE;
+}
+
+.relationship-tag.action{
+  background: #44806E;
+  padding-right: 2px;
+  clip-path: polygon(-3px -1px, calc(100% - 15px) 0, 100% 50%,
+    calc(100% - 15px) calc(100% + 3px), -3px calc(100% + 3px), 14px 50%);
+}
+
+.relationship-tag.action > div {
+  padding-left: 35px;
+  padding-right: 40px;
+  left: 1px;
+  background: #5BCBA9;
+  clip-path: polygon(-1px -2px, calc(100% - 15px) 0, calc(100% - 1px) 50%,
+    calc(100% - 15px) calc(100% + 3px), -1px calc(100% + 3px), 15px 50%);
+}
+
+.relationship-tag.action.empty {
+  background: #5BCBA9;
+}
+
+.relationship-tag.action.empty > div {
+  color: #5BCBA9;
+  background: #FEFEFE;
+}
+
+.relationship-tag.thing{
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #C1892A;
+  padding-right: 2px;
+  clip-path: polygon(-3px -1px, 100% -3px, 100% calc(100% + 1px), 0 calc(100% + 1px), 14px 50%);
+}
+
+.relationship-tag.thing > div {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-left: 35px;
+  padding-right: 30px;
+  background: #FEB02C;
+  clip-path: polygon(0px -1px, 100% -1px, 100% calc(100% + 1px), 2px calc(100% + 1px), 15px 50%);
+}
+
+.relationship-tag.thing.empty {
+  background: #FEB02C;
+}
+
+.relationship-tag.thing.empty > div{
+  color: #FEB02C;
+  background: #FEFEFE;
+}
+
+.tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 20px;
+  line-height: 22px;
+  color: #FEFEFE;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  box-shadow: inset 0px 0px 1px 0px rgba(35,35,35,0.5);
+  cursor: pointer;
+}
+
+.tag.person{
+  background: #5181DC;
+}
+
+.tag.action{
+  background: #5BCBA9;
+}
+
+.tag.thing {
+  background: #FEB02C;
+}

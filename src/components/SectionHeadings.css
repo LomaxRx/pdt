@@ -1,0 +1,73 @@
+.section-heading h1 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 15px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.section-heading h1:after{
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.section-heading h2 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 15px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.section-heading h2:after{
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  background: #232323;
+
+}
+
+
+.section-heading h3 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 15px;
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.section-heading h3:after{
+  content: '';
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  background: #232323;
+
+}
+
+.section-heading.blue h1:after,
+.section-heading.blue h2:after,
+.section-heading.blue h3:after{
+  background: #5181DC;
+}
+
+.section-heading.green h1:after,
+.section-heading.green h2:after,
+.section-heading.green h3:after{
+  background: #5BCBA9;
+}
+
+.section-heading.orange h1:after,
+.section-heading.orange h2:after,
+.section-heading.orange h3:after{
+  background: #FEB02C;
+}

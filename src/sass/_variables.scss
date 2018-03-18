@@ -1,0 +1,18 @@
+$colors: (
+  dark-blue: #52688C,
+  blue: #5181DC,
+  green: #5BCBA9,
+  yellow: #FFD968,
+  orange: #FEB02C,
+  red: #D26635,
+  purple: #7E528C,
+  black: #232323,
+  white: #FEFEFE,
+  gray: #F6F7F7,
+  grey: #F6F7F7,
+  transparent-grey: rgba(#232323, 0.3)
+);
+
+@function color($key) {
+   @return map-get($colors, $key);
+}

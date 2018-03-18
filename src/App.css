@@ -1,0 +1,29 @@
+.app__left, .app__spacer, .app__right {
+  min-height: 100vh;
+}
+
+.app__left, .app__right{
+  padding-bottom: 180px;
+}
+
+.app__right {
+  padding-top: 90px;
+}
+
+.app__left{
+  padding-top: 15px;
+}
+
+.app__right > section {
+  min-height: 200px;
+}
+
+.app__right .section-heading {
+  position: relative;
+}
+
+.app__spacer > div {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #EBEDED;
+}
