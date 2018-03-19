@@ -1,0 +1,9 @@
+.main-app {
+    background: #F6F7F7;
+    min-height: 100vh;
+}
+
+.app__wrapper{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

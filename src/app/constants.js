@@ -1,0 +1,2 @@
+export const ADD_PERSON_TYPE = 'ADD_PERSON_TYPE';
+export const EDIT_PERSON_FIELD = 'EDIT_PERSON_FIELD';

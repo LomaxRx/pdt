@@ -1,0 +1,24 @@
+.person__inputs{
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.person__inputs:after{
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: linear-gradient(#EBEDED 50%, rgba(255,255,255,0) 0%);
+  background-position: right 0px;
+  background-size: 1px 75px;
+  background-repeat: repeat-y;
+  content: '';
+  height: 100%;
+  width: 1px;
+}
+
+.person-new > .pdt-card{
+  max-width: 600px;
+  margin: 0 auto;
+}

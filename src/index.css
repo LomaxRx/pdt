@@ -72,6 +72,16 @@ a:hover{
   text-decoration: inherit;
 }
 
+input {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(35,35,35,0.15);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
 .gutter-10 {
   margin-right: -5px;
   margin-left: -5px;

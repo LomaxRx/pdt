@@ -4,10 +4,15 @@ import storage from 'store';
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import adminReducer from './admin/reducers';
+import mainReducer from './app/reducers';
 
 export const history = createHistory()
 
-const initialState = { admin: storage.get('state') || {} };
+const initialState = {
+  admin: storage.get('state') || {},
+  main: storage.get('main') || {}
+};
+
 const enhancers = []
 const middleware = [
   thunk,
@@ -28,7 +33,7 @@ const composedEnhancers = compose(
 )
 
 const store = createStore(
-  combineReducers({ admin: adminReducer }),
+  combineReducers({ admin: adminReducer, main: mainReducer }),
   initialState,
   composedEnhancers
 )

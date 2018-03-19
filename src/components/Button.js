@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 export default class Button extends React.Component {
 
   render(){
-    let { color, label, className, linkTo, onClick } = this.props;
+    let { color, label, className, linkTo, onClick=()=>{} } = this.props;
     if(linkTo)
       return (
-        <Link className={`button ${color} ${className}`} to={linkTo}>{label}</Link>
+        <Link className={`button ${color} ${className}`} to={linkTo} onClick={onClick}>{label}</Link>
       );
 
     if(onClick)
