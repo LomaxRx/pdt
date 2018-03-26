@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextArea } from '../components/Inputs';
+import { Text } from '../components/Inputs';
 import { addRelationship, removeRelationship, changeType } from '../actions';
 import RelationshipInput from '../components/RelationshipInput';
 import { RelationshipTag, RelationshipTagGroup } from '../components/RelationshipTags'
@@ -42,7 +42,7 @@ class PeopleRelationships extends React.Component {
   }
 
   render(){
-    let { person, relationships, people, actions, things } = this.props;
+    let { person, relationships, actions, things } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">
@@ -58,8 +58,8 @@ class PeopleRelationships extends React.Component {
             </div>
             <div className="relationships">
               {relationships.map((r,i)=>(
-                <div className="relationships__list">
-                  <RelationshipTagGroup key={`relationship-${i}`}>
+                <div className="relationships__list" key={`relationship-${i}`}>
+                  <RelationshipTagGroup>
                     <RelationshipTag type="person" label={person.type} />
                     <RelationshipTag type="action" label={actions[r.actionId].type} />
                     <RelationshipTag type="thing" label={things[r.thingId].type} />

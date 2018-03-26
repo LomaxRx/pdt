@@ -51,7 +51,7 @@ class RelationshipInput extends React.Component {
           </div>
         </div>
         <div className="rel-input__drag-items row">
-          {(type=='action' || type=='thing') &&
+          {(type==='action' || type==='thing') &&
             <div className="rel-input__drag-items__people col-6">
               <div className="section-heading blue">
                 <h3>People</h3>
@@ -63,7 +63,7 @@ class RelationshipInput extends React.Component {
                   label={people[k].type} />
               ))}
             </div>
-          }{(type=='person' || type=='thing') &&
+          }{(type==='person' || type==='thing') &&
             <div className="rel-input__drag-items__actions col-6">
               <div className="section-heading green">
                 <h3>Actions</h3>
@@ -75,7 +75,7 @@ class RelationshipInput extends React.Component {
                   label={actions[k].type} />
               ))}
             </div>
-          }{(type=='person' || type=='action') &&
+          }{(type==='person' || type==='action') &&
             <div className="rel-input__drag-items__things col-6">
               <div className="section-heading orange">
                 <h3>Things</h3>
@@ -95,9 +95,9 @@ class RelationshipInput extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  people: state.people.types,
-  actions: state.actions.types,
-  things: state.things.types
+  people: state.admin.people.types,
+  actions: state.admin.actions.types,
+  things: state.admin.things.types
 });
 
 export default RelationshipInput = connect(mapStateToProps)(RelationshipInput);

@@ -29,7 +29,7 @@ class ThingsAttributes extends React.Component {
 
 
   render(){
-    let { thing, addAttribute } = this.props;
+    let { thing } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">

@@ -2,14 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
-import { savePerson, setPerson, resetPerson } from '../actions';
+import { savePerson, setPerson, resetPerson, deletePerson } from '../actions';
 import Subheader, { MenuList } from '../components/Subheader.js';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
 import PeopleSetup from './PeopleSetup';
 import PeopleAttributes from './PeopleAttributes';
 import PeopleRelationships from './PeopleRelationships';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class People extends React.Component {
   componentWillMount(){
@@ -32,13 +30,20 @@ class People extends React.Component {
     this.props.changePage('/admin/');
   }
 
+  delete = () => {
+    this.props.deletePerson(this.props.person);
+    this.props.resetPerson();
+    this.props.changePage('/admin/');
+  }
+
   render(){
     let { match: { params: { id } } } = this.props;
     return (
       <div className="people">
         <Subheader title='Person:' color='blue' admin={true} buttons={[
-          <a className="button red" onClick={this.cancel}>cancel</a>,
-          <a className="button" onClick={this.save}>save</a>
+          <a className="button red" key={1} onClick={this.delete}>delete</a>,
+          <a className="button red" key={2} onClick={this.cancel}>cancel</a>,
+          <a className="button" key={3} onClick={this.save}>save</a>
         ]}>
           <MenuList items={[
             { label: 'Setup', linkTo: `/admin/people/${id}/` },
@@ -59,6 +64,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   changePage: (url) => push(url),
   savePerson: (person) => savePerson(person),
   setPerson: (person) => setPerson(person),
+  deletePerson,
   resetPerson
 }, dispatch);
 

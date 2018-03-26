@@ -107,7 +107,7 @@
   font-size: 12px;
   text-transform: uppercase;
   height: 20px;
-  line-height: 22px;
+  line-height: 23px;
   color: #FEFEFE;
   padding-left: 10px;
   padding-right: 10px;
@@ -117,6 +117,10 @@
   margin-right: 5px;
   box-shadow: inset 0px 0px 1px 0px rgba(35,35,35,0.5);
   cursor: pointer;
+}
+
+.tag.sm {
+  font-size: 10px;
 }
 
 .tag.person{

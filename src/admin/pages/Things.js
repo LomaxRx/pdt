@@ -4,12 +4,10 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { saveThing, setThing, resetThing } from '../actions';
 import Subheader, { MenuList } from '../components/Subheader.js';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
 import ThingsSetup from './ThingsSetup';
 import ThingsAttributes from './ThingsAttributes';
 import ThingsRelationships from './ThingsRelationships';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class Things extends React.Component {
   componentWillMount(){

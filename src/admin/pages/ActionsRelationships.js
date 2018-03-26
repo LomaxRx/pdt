@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextArea } from '../components/Inputs';
+import { Text } from '../components/Inputs';
 import { addRelationship, removeRelationship, changeType } from '../actions';
 import RelationshipInput from '../components/RelationshipInput';
 import { RelationshipTag, RelationshipTagGroup } from '../components/RelationshipTags'
@@ -42,7 +42,7 @@ class ActionsRelationships extends React.Component {
   }
 
   render(){
-    let { action, relationships, people, actions, things, rel } = this.props;
+    let { action, relationships, people, things, rel } = this.props;
     console.log(rel);
     console.log(action);
     return (

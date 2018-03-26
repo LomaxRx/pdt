@@ -5,3 +5,42 @@
 .people__new-buttons a{
   margin-right: 5px;
 }
+
+.people__list{
+  padding: 0 !important;
+}
+
+.people__list__row{
+  border-bottom: 1px solid #EBEDED;
+}
+
+.people__list__row:hover{
+  background: rgba(35,35,35,0.025);
+}
+
+.people__list__row:after{
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.people__list__row__cell{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+  width: 125px;
+  box-shadow: inset -1px 0px 0px 0px #EBEDED;
+  font-size: 14px;
+}
+
+.people__list__row__cell.types{
+  width: 250px;
+}
+
+.people__list__row__cell.types .tag {
+  margin-bottom: 0;
+}

@@ -10,7 +10,7 @@ export default class Term extends React.Component {
     return (
       <div className="term">
         <Link to={linkTo}><div className="term__type">{term.type} <Arrow /></div></Link>
-        {term.description != '' &&
+        {term.description !== '' &&
           <div className="term__description">{term.description}</div>
         }
       </div>

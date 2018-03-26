@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextArea } from '../components/Inputs';
+import { Text } from '../components/Inputs';
 import { addRelationship, removeRelationship, changeType } from '../actions';
 import RelationshipInput from '../components/RelationshipInput';
 import { RelationshipTag, RelationshipTagGroup } from '../components/RelationshipTags'
@@ -42,7 +42,7 @@ class ThingsRelationships extends React.Component {
   }
 
   render(){
-    let { thing, relationships, people, actions, things } = this.props;
+    let { thing, relationships, people, actions } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">

@@ -29,7 +29,7 @@ class PeopleAttributes extends React.Component {
 
 
   render(){
-    let { person, addAttribute } = this.props;
+    let { person } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">

@@ -3,7 +3,7 @@ import Button from './Button';
 import './AttributeInput.css';
 
 const SelectOption = ({ value, active, onClick }) => (
-  <div className={`attribute-input__select__option${active==value ? ' active' : ''}`} onClick={()=>{onClick(value)}}>
+  <div className={`attribute-input__select__option${active===value ? ' active' : ''}`} onClick={()=>{onClick(value)}}>
     {value}
   </div>
 )

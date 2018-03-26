@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-import { Route, Link, Redirect, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Subheader, { MenuList } from '../components/Subheader';
 import People from './pages/People';
 import Person from './pages/Person';
@@ -19,8 +19,8 @@ const App = () => (
     </Subheader>
     <div className="app__wrapper container">
       <Switch>
-        <Route path="/people/" component={People} />
-        <Route path="/person/" component={Person} />
+        <Route path="/people/:id/" component={Person} />
+        <Route path="/people/" exact component={People} />
       </Switch>
     </div>
   </div>

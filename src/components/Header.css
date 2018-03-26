@@ -3,9 +3,7 @@
   height: 65px;
   position: relative;
   background-color: #4A5D7C;
-  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/hypnotize.png);
-  /*background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/topography.png);
-  */
+  background-image: url(/images/hypnotize.png);
   background-blend-mode: multiply;
 }
 

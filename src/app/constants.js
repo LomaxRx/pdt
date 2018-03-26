@@ -1,2 +1,6 @@
 export const ADD_PERSON_TYPE = 'ADD_PERSON_TYPE';
 export const EDIT_PERSON_FIELD = 'EDIT_PERSON_FIELD';
+export const SAVE_PERSON = 'SAVE_PERSON';
+export const UPDATE_PERSON = 'UPDATE_PERSON';
+export const SET_PERSON = 'SET_PERSON';
+export const RESET_PERSON = 'RESET_PERSON';

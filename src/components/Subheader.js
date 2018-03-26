@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export class MenuList extends React.Component {
 
   render(){
-    let { items, active } = this.props;
+    let { items } = this.props;
     return (
       <div className="subheader__menu__list">
         {items.map((item, i)=>(

@@ -4,17 +4,15 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { saveAction, setAction, resetAction } from '../actions';
 import Subheader, { MenuList } from '../components/Subheader.js';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
 import ActionsSetup from './ActionsSetup';
 import ActionsAttributes from './ActionsAttributes';
 import ActionsRelationships from './ActionsRelationships';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class Actions extends React.Component {
   componentWillMount(){
     let { match: { params: { id } }, actions} = this.props;
-    if(id=='new') return;
+    if(id==='new') return;
       this.props.setAction(actions.types[id]);
   }
 

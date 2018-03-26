@@ -29,8 +29,7 @@ class ActionsAttributes extends React.Component {
 
 
   render(){
-    let { action, addAttribute } = this.props;
-    console.log(action);
+    let { action } = this.props;
     return (
       <main className="container">
         <div className="row gutter-10">

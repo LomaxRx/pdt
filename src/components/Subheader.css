@@ -62,6 +62,10 @@
   transition: transform 0.15s ease;
 }
 
+.main-app .subheader__menu__list a:after{
+  background: #F6F7F7;
+}
+
 .subheader__menu__list a.active:after{
   transform: translateY(-5px);
   box-shadow: 0px -1px 0px 0px rgba(0,0,0,.3),

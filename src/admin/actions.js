@@ -11,8 +11,6 @@ import {
   DELETE_PERSON, DELETE_ACTION, DELETE_THING
 } from './constants';
 
-import slugify from './slugify';
-
 export const savePerson = (person) => {
   return {
     type: SAVE_PERSON,

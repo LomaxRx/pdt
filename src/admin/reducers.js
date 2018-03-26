@@ -15,7 +15,7 @@ import { routerReducer } from 'react-router-redux'
 import storage from 'store';
 import { combineReducers } from 'redux';
 
-import slugify from './slugify';
+import slugify from '../slugify';
 
 const people = (state={
   types: {},
@@ -30,15 +30,22 @@ const people = (state={
     }
   }
 }, action) => {
-  let types;
+  let types, id;
   switch(action.type){
     case SAVE_PERSON:
+      id = slugify(action.person.type);
       return {
         ...state,
-        types: {...state.types, [action.person.id]: action.person}
+        types: {
+          ...state.types,
+          [id]: {
+            ...action.person,
+            id
+          }
+        }
       }
     case DELETE_PERSON:
-      types = [...state.types];
+      types = {...state.types};
       delete types[action.person.id];
       return {
         ...state,
@@ -61,7 +68,7 @@ const actions = (state={
         types: {...state.types, [action.action.id]: action.action}
       }
     case DELETE_ACTION:
-      types = [...state.types];
+      types = {...state.types};
       delete types[action.action.id];
       return {
         ...state,
@@ -84,7 +91,7 @@ const things = (state={
         types: {...state.types, [action.thing.id]: action.thing}
       }
     case DELETE_THING:
-      types = [...state.types];
+      types = {...state.types};
       delete types[action.thing.id];
       return {
         ...state,
@@ -99,7 +106,7 @@ const activePerson = (state={id: '', type: '', description: '', attributes: []},
   let attrs;
   switch(action.type){
     case CHANGE_PERSON_TYPE:
-      return {...state, id: slugify(action.objectType), type: action.objectType };
+      return {...state, type: action.objectType };
     case CHANGE_PERSON_DESCRIPTION:
       return {...state, description: action.description };
     case ADD_PERSON_ATTRIBUTE:
@@ -108,7 +115,7 @@ const activePerson = (state={id: '', type: '', description: '', attributes: []},
       attrs = removeAttribute(action, state.attributes);
       return {...state, attributes: attrs};
     case SET_PERSON:
-      return action.person;
+      return { ...action.person };
     case RESET_PERSON:
       return {id: '', type: '', description: '', attributes: []};
     default:
@@ -129,7 +136,7 @@ const activeAction = (state={id: '', type: '', description: '', attributes: []},
       attrs = removeAttribute(action, state.attributes);
       return {...state, attributes: attrs};
     case SET_ACTION:
-      return action.action;
+      return { ...action.action };
     case RESET_ACTION:
       return {id: '', type: '', description: '', attributes: []};
     default:
@@ -150,7 +157,7 @@ const activeThing = (state={id: '', type: '', description: '', attributes: []}, 
       attrs = removeAttribute(action, state.attributes);
       return {...state, attributes: attrs};
     case SET_THING:
-      return action.thing;
+      return { ...action.thing };
     case RESET_THING:
       return {id: '', type: '', description: '', attributes: []};
     default:
@@ -189,7 +196,6 @@ const relationships = (state={people: {}, actions: {}, things: {}}, action) => {
         }
       }
     case REMOVE_RELATIONSHIP:
-      console.log("REMOVING RELATIONSHIP");
       _person = removeRelationship(action, state.people[action.personId] || []);
       _action = removeRelationship(action, state.actions[action.actionId] || []);
       _thing = removeRelationship(action, state.things[action.thingId] || []);
@@ -207,9 +213,9 @@ const relationships = (state={people: {}, actions: {}, things: {}}, action) => {
           [action.thingId]: _thing
         }
       };
-    case DELETE_PERSON:
-    case DELETE_ACTION:
-    case DELETE_THING:
+    // case DELETE_PERSON:
+    // case DELETE_ACTION:
+    // case DELETE_THING:
       //TODO remove relationships after delete
     default:
       return state;
@@ -233,7 +239,7 @@ function removeRelationship(action, list){
   let { personId, actionId, thingId } = action;
   let index;
   let item = list.find((l,i)=>{
-    let match = l.personId == personId && l.actionId == actionId && l.thingId == thingId;
+    let match = l.personId === personId && l.actionId === actionId && l.thingId === thingId;
     if(match){
       index = i;
       return true;
@@ -257,6 +263,7 @@ function removeAttribute(action, attributes){
       index = i;
       return true;
     }
+    return false;
   });
   if(attr) attrs.splice(index,1);
   return attrs;

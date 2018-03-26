@@ -19,6 +19,58 @@
   padding-bottom: 15px;
 }
 
+.pdt-card__title__buttons{
+  float: right;
+}
+
+.icon-edit{
+  cursor:pointer;
+}
+
+.pdt-card__title__buttons .button:first-child{
+  margin-right: 5px;
+}
+
+.pdt-card__section{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #EBEDED;
+}
+
+.contact-card{
+  padding-top: 15px;
+}
+
+.contact-card .active-since{
+  margin-top: 15px;
+  font-size: 11px;
+}
+
+.contact-card .active-since__label{
+  font-weight: 400;
+  padding-right: 5px;
+}
+
+.contact-card .active-since__date{
+  font-weight: 300;
+}
+
+.contact-card__field{
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.contact-card__field__label{
+  display: block;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.contact-card__field__value{
+  display: block;
+  font-weight: 300;
+}
+
 .pdt-card__footer{
   border-top: 1px solid #EBEDED;
   padding-top: 15px;

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Admin from './pages/Admin'
 import People from './pages/People';
 import Actions from './pages/Actions';
