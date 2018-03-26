@@ -45,7 +45,7 @@ class PeopleAttributes extends React.Component {
             </div>
             <div className="attributes">
               {person.attributes.map((a,i)=>(
-                <Attribute {...a} term="person"/>
+                <Attribute {...a} term="person" key={`attr-${i}`}/>
               ))}
             </div>
             <div className="add-attribute-button">
