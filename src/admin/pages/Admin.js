@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 let Admin = ({people, actions, things}) => (
   <div className="admin">
     <Subheader title='Admin' admin={true}>
-      {console.log(people)}
       <MenuList items={[
         { label: 'Glossary', linkTo: '/admin/' },
         { label: 'Relationships', linkTo: '/admin/relationships/' },

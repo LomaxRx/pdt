@@ -5,18 +5,17 @@ import {
 
 import { combineReducers } from 'redux';
 import storage from 'store';
-import slugify from '../slugify';
 
 const people = (state=[], action) => {
   let index, person, persons;
-  if(!action.person) return state;
-  action.person.id = slugify(`${action.person['First Name']} ${action.person['Last Name']}`);
   switch(action.type){
     case SAVE_PERSON:
+      if(!action.person) return state;
       person = state.find(p=>p.id===action.person.id);
       if(!person) return [...state, action.person];
       // eslint-disable-next-line
     case UPDATE_PERSON:
+      if(!action.person) return state;
       state.find((p,i)=>{
         if(p.id === action.person.id){
           index=i;

@@ -30,19 +30,12 @@ const people = (state={
     }
   }
 }, action) => {
-  let types, id;
+  let types;
   switch(action.type){
     case SAVE_PERSON:
-      id = slugify(action.person.type);
       return {
         ...state,
-        types: {
-          ...state.types,
-          [id]: {
-            ...action.person,
-            id
-          }
-        }
+        types: {...state.types, [action.person.id]: { ...action.person } }
       }
     case DELETE_PERSON:
       types = {...state.types};
@@ -106,7 +99,7 @@ const activePerson = (state={id: '', type: '', description: '', attributes: []},
   let attrs;
   switch(action.type){
     case CHANGE_PERSON_TYPE:
-      return {...state, type: action.objectType };
+      return {...state, id: slugify(action.objectType), type: action.objectType };
     case CHANGE_PERSON_DESCRIPTION:
       return {...state, description: action.description };
     case ADD_PERSON_ATTRIBUTE:
