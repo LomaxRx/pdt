@@ -7,12 +7,38 @@
   margin-left: -14px;
 }
 
+.relationship-tag-group.small > .relationship-tag.action:not(.empty) {
+  margin-left: -16px;
+}
+
+.relationship-tag-group.small > .relationship-tag.thing:not(.empty) {
+  margin-left: -16px;
+}
+
+.relationship-tag-group{
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.relationship-tag-group.small{
+  white-space: nowrap;
+  margin-bottom: 5px;
+  position: relative;
+  left: 10px;
+}
+
 .relationship-tag {
   height: 30px;
   display: inline-block;
   margin-left: 0px;
   transition: margin-left 0.1s ease;
+  position: relative;
 }
+
+.relationship-tag-group.small .relationship-tag{
+  height: 18px;
+}
+
 
 .relationship-tag > div {
   line-height: 30px;
@@ -26,11 +52,18 @@
   width: 100%;
 }
 
+.relationship-tag-group.small .relationship-tag > div {
+  line-height: 18px;
+  font-size: 8px;
+  height: 16px;
+}
+
 .relationship-tag.person{
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   background: #3D5C92;
   padding-right: 2px;
+  z-index: 3;
   clip-path: polygon(-3px -1px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) calc(100% + 3px), 0 calc(100% + 3px));
 }
 
@@ -54,6 +87,7 @@
 
 .relationship-tag.action{
   background: #44806E;
+  z-index: 2;
   padding-right: 2px;
   clip-path: polygon(-3px -1px, calc(100% - 15px) 0, 100% 50%,
     calc(100% - 15px) calc(100% + 3px), -3px calc(100% + 3px), 14px 50%);
@@ -68,6 +102,20 @@
     calc(100% - 15px) calc(100% + 3px), -1px calc(100% + 3px), 15px 50%);
 }
 
+.relationship-tag-group.small .relationship-tag.action {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  clip-path: polygon(-3px -1px, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) calc(100% + 3px), 0 calc(100% + 3px));
+}
+
+.relationship-tag-group.small .relationship-tag.action > div{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-left: 15px;
+  padding-right: 20px;
+  clip-path: polygon(-3px -1px, calc(100% - 15px) 0, calc(100% - 1px) 50%, calc(100% - 15px) calc(100% + 3px), 0 calc(100% + 3px));
+}
+
 .relationship-tag.action.empty {
   background: #5BCBA9;
 }
@@ -78,6 +126,7 @@
 }
 
 .relationship-tag.thing{
+  z-index: 1;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background: #C1892A;
@@ -92,6 +141,11 @@
   padding-right: 30px;
   background: #FEB02C;
   clip-path: polygon(0px -1px, 100% -1px, 100% calc(100% + 1px), 2px calc(100% + 1px), 15px 50%);
+}
+
+.relationship-tag-group.small .relationship-tag.thing > div {
+  padding-left: 20px;
+  padding-right: 15px;
 }
 
 .relationship-tag.thing.empty {

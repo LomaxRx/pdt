@@ -41,7 +41,6 @@ class People extends React.Component {
     return (
       <div className="people">
         <Subheader title='Person:' color='blue' admin={true} buttons={[
-          <a className="button red" key={1} onClick={this.delete}>delete</a>,
           <a className="button red" key={2} onClick={this.cancel}>cancel</a>,
           <a className="button" key={3} onClick={this.save}>save</a>
         ]}>

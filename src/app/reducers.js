@@ -5,6 +5,7 @@ import {
 
 import { combineReducers } from 'redux';
 import storage from 'store';
+import slugify from '../slugify';
 
 const people = (state=[], action) => {
   let index, person, persons;
@@ -25,7 +26,7 @@ const people = (state=[], action) => {
       });
       if(!index===undefined) return state;
       persons = [...state];
-      persons.splice(index, 1, {...action.person});
+      persons.splice(index, 1, {...action.person, id: slugify(`${action.person['First Name']} ${action.person['Last Name']}`)});
       return persons;
     default:
       return state;
