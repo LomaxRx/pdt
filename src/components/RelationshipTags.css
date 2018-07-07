@@ -25,6 +25,12 @@
   margin-bottom: 5px;
   position: relative;
   left: 10px;
+  transform: scale(1);
+  transition: transform 0.15s ease;
+}
+
+.relationship-tag-group.small:hover{
+  transform: scale(1.05) translateX(2.5%);
 }
 
 .relationship-tag {
